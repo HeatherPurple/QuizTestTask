@@ -7,7 +7,7 @@
       {"text": "Китай", "correct": false},
       {"text": "Канада", "correct": false}
     ],
-    "backgroundFilePath": "backgrounds/russia.png"
+    "backgroundFilePath": "Questions/QuestionBackgrounds/russia"
   },
   {
     "text": "Какой металл самый тяжелый?",
@@ -17,7 +17,7 @@
       {"text": "Олово", "correct": false},
       {"text": "Осмий", "correct": true}
     ],
-    "backgroundFilePath": "backgrounds/osmium.png"
+    "backgroundFilePath": "Questions/QuestionBackgrounds/osmium"
   },
   {
     "text": "Какая планета самая горячая?",
@@ -27,7 +27,7 @@
       {"text": "Меркурий", "correct": false},
       {"text": "Марс", "correct": false}
     ],
-    "backgroundFilePath": "backgrounds/venus.png"
+    "backgroundFilePath": "Questions/QuestionBackgrounds/venus"
   },
   {
     "text": "Какой напиток потребляют больше всего в мире?",
@@ -37,6 +37,6 @@
       {"text": "Кофе", "correct": false},
       {"text": "Вино", "correct": false}
     ],
-    "backgroundFilePath": "backgrounds/tea.png"
+    "backgroundFilePath": "Questions/QuestionBackgrounds/tea"
   }
 ]

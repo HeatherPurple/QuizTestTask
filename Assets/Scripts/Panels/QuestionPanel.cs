@@ -30,7 +30,7 @@ namespace Panels
             Question question = QuizController.Instance.GetCurrentQuestion();
             
             text.text = question.text;
-            // background.sprite = Resources.Load<Sprite>();
+            background.sprite = Resources.Load<Sprite>(question.backgroundFilePath);
 
             for (int i = 0; i < answerButtonArray.Length; i++)
             {
