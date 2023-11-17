@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class QuizController : MonoBehaviour
 {
+    private const string QUESTIONS_PATH = "/Resources/Questions/Questions1.json";
+    
     public static QuizController Instance;
 
     public static event EventHandler<OnQuestionAnsweredEventArgs> OnQuestionAnswered;
@@ -27,12 +29,12 @@ public class QuizController : MonoBehaviour
     {
         Instance = this;
         
-        questionArray = DataReader.ReadJson();
+        questionArray = DataReader.GetQuestionArrayFromJson(Application.dataPath + QUESTIONS_PATH);
     }
 
     private void EndGame()
     {
-        GameHandler.Instance.EndGame();
+        GameHandler.Instance.IsEndGame = true;
         OnEndGame?.Invoke(this, new OnEndGameEventArgs(){correctAnswersNumber = correctAnswersNumber});
         
         currentQuestionIndex = 0;

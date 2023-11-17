@@ -11,6 +11,11 @@ namespace Panels
         [SerializeField] private Image background;
         [SerializeField] private GameObject[] answerButtonArray;
         
+        private void Awake()
+        {
+            activeState = GameHandler.GameState.Question;
+        }
+        
         protected override void GameHandler_OnStateChanged(object sender, GameHandler.OnStateChangedEventArgs e)
         {
             base.GameHandler_OnStateChanged(sender, e);
@@ -25,7 +30,7 @@ namespace Panels
             Question question = QuizController.Instance.GetCurrentQuestion();
             
             text.text = question.text;
-            // background.sprite = question.
+            // background.sprite = Resources.Load<Sprite>();
 
             for (int i = 0; i < answerButtonArray.Length; i++)
             {

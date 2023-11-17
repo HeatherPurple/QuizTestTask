@@ -8,6 +8,11 @@ namespace Panels
         private const string CORRECT_ANSWERS_NUMBER = "Количество правильных ответов: ";
         [SerializeField] private TextMeshProUGUI text;
         
+        private void Awake()
+        {
+            activeState = GameHandler.GameState.Results;
+        }
+        
         protected override void Start()
         {
             base.Start();

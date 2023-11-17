@@ -12,7 +12,9 @@ public class GameHandler : MonoBehaviour
     {
         public GameState state;
     }
-    
+
+    public bool IsEndGame { private get; set; }
+
     public enum GameState
     {
         Menu,
@@ -22,7 +24,6 @@ public class GameHandler : MonoBehaviour
     }
 
     private GameState currentState;
-    private bool isEndGame;
 
     private void Awake()
     {
@@ -46,21 +47,13 @@ public class GameHandler : MonoBehaviour
                 ChangeState(GameState.Answer);
                 break;
             case GameState.Answer:
-                ChangeState(isEndGame ? GameState.Results : GameState.Question);
+                ChangeState(IsEndGame ? GameState.Results : GameState.Question);
                 break;
             case GameState.Results:
-                isEndGame = false;
+                IsEndGame = false;
                 ChangeState(GameState.Menu);
                 break;
         }
     }
-
-    public void EndGame()
-    {
-        isEndGame = true;
-    }
-
-
     
-
 }

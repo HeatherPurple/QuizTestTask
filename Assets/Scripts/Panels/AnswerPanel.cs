@@ -10,6 +10,12 @@ namespace Panels
         
         private const string CORRECT_ANSWER_TEXT = "Верно";
         private const string INCORRECT_ANSWER_TEXT = "Неверно";
+        
+        
+        private void Awake()
+        {
+            activeState = GameHandler.GameState.Answer;
+        }
 
         protected override void Start()
         {

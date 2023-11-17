@@ -4,17 +4,19 @@ namespace Panels
 {
     public class BasePanel : MonoBehaviour
     {
+        [SerializeField] private GameObject showOrHide;
         [SerializeField] protected GameHandler.GameState activeState;
-    
+        
+        
         protected virtual void Start()
         {
             GameHandler.OnStateChanged += GameHandler_OnStateChanged;
-            gameObject.SetActive(activeState == GameHandler.GameState.Menu);
+            showOrHide.SetActive(activeState == GameHandler.GameState.Menu);
         }
 
         protected virtual void GameHandler_OnStateChanged(object sender, GameHandler.OnStateChangedEventArgs e)
         {
-            gameObject.SetActive(e.state == activeState);
+            showOrHide.SetActive(e.state == activeState);
         }
 
         protected virtual void OnDestroy()
