@@ -6,7 +6,7 @@ namespace Panels
     {
         [SerializeField] protected GameHandler.GameState activeState;
     
-        protected void Start()
+        protected virtual void Start()
         {
             GameHandler.OnStateChanged += GameHandler_OnStateChanged;
             gameObject.SetActive(activeState == GameHandler.GameState.Menu);
@@ -17,7 +17,7 @@ namespace Panels
             gameObject.SetActive(e.state == activeState);
         }
 
-        protected void OnDestroy()
+        protected virtual void OnDestroy()
         {
             GameHandler.OnStateChanged -= GameHandler_OnStateChanged;
         }

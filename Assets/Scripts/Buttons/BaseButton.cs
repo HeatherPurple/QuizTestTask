@@ -7,7 +7,7 @@ namespace Buttons
     [RequireComponent(typeof(Button))]
     public class BaseButton : MonoBehaviour
     {
-        protected Button button;
+        private Button button;
         
         protected void Awake()
         {

@@ -20,47 +20,47 @@ public class GameHandler : MonoBehaviour
         Answer,
         Results
     }
-    
-    [SerializeField] private int numberOfQuestions;
 
     private GameState currentState;
-    private int numberOfQuestionsLeft;
+    private bool isEndGame;
 
     private void Awake()
     {
         Instance = this;
-
-        numberOfQuestionsLeft = numberOfQuestions;
     }
     
+    private void ChangeState(GameState newState)
+    {
+        currentState = newState;
+        OnStateChanged?.Invoke(this, new OnStateChangedEventArgs{state = newState});
+    }
     
     public void NextState()
     {
-        //to do: вынести логику подсчета вопросов?
         switch (currentState)
         {
             case GameState.Menu:
                 ChangeState(GameState.Question);
                 break;
             case GameState.Question:
-                numberOfQuestionsLeft--;
                 ChangeState(GameState.Answer);
                 break;
             case GameState.Answer:
-                ChangeState(numberOfQuestionsLeft > 0 ? GameState.Question : GameState.Results);
+                ChangeState(isEndGame ? GameState.Results : GameState.Question);
                 break;
             case GameState.Results:
-                numberOfQuestionsLeft = numberOfQuestions;
+                isEndGame = false;
                 ChangeState(GameState.Menu);
                 break;
         }
     }
 
-    private void ChangeState(GameState newState)
+    public void EndGame()
     {
-        currentState = newState;
-        OnStateChanged?.Invoke(this, new OnStateChangedEventArgs{state = newState});
+        isEndGame = true;
     }
+
+
     
 
 }

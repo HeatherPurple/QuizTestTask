@@ -33,7 +33,7 @@ namespace Panels
                 {
                     answerButtonArray[i].SetActive(true);
                     answerButtonArray[i].GetComponentInChildren<TextMeshProUGUI>().text = question.answers[i].text;
-                    answerButtonArray[i].GetComponent<AnswerButton>().isCorrect = question.answers[i].correct;
+                    answerButtonArray[i].GetComponent<AnswerButton>().AnswerIndex = i;
                 }
                 else
                 {

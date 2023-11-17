@@ -1290,7 +1290,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d2d1df4bdf0b44f97e5986667c8541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfQuestions: 3
 --- !u!1 &687802378
 GameObject:
   m_ObjectHideFlags: 0
@@ -2289,10 +2288,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 968076781}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb6148c52094aa2aac0888c06c1470f, type: 3}
+  m_Script: {fileID: 11500000, guid: 690a8c358fd789a4489ed32e251932a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   activeState: 3
+  text: {fileID: 771083643}
 --- !u!1 &1073540258
 GameObject:
   m_ObjectHideFlags: 0
@@ -3854,7 +3854,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2109183386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb6148c52094aa2aac0888c06c1470f, type: 3}
+  m_Script: {fileID: 11500000, guid: 79bcb11100a04584abc992706f891388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   activeState: 2
+  text: {fileID: 1096606587}
