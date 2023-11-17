@@ -7,21 +7,21 @@ namespace Buttons
     [RequireComponent(typeof(Button))]
     public class BaseButton : MonoBehaviour
     {
-        private Button baseButton;
+        protected Button button;
         
-        private void Awake()
+        protected void Awake()
         {
-            baseButton = GetComponent<Button>();
+            button = GetComponent<Button>();
         }
 
-        private void Start()
+        protected void Start()
         {
-            baseButton.onClick.AddListener(OnClickAction);
+            button.onClick.AddListener(OnClickAction);
         }
         
-        private void OnDestroy()
+        protected void OnDestroy()
         {
-            baseButton.onClick.RemoveListener(OnClickAction);
+            button.onClick.RemoveListener(OnClickAction);
         }
 
         protected virtual void OnClickAction()

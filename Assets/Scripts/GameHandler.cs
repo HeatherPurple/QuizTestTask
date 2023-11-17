@@ -24,10 +24,7 @@ public class GameHandler : MonoBehaviour
     [SerializeField] private int numberOfQuestions;
 
     private GameState currentState;
-
     private int numberOfQuestionsLeft;
-    
-
 
     private void Awake()
     {
